@@ -15,6 +15,9 @@ class CreateTraineeshipsTable extends Migration
     {
         Schema::create('traineeships', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }

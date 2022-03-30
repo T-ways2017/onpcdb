@@ -15,6 +15,17 @@ class CreateFirefightersTable extends Migration
     {
         Schema::create('firefighters', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('subname');
+            $table->date('birthday');
+            $table->string('sex',1);
+            $table->string('email')->unique();
+            $table->string('cv');
+            $table->string('rib');
+            $table->string('picture');
+            $table->string('more');
+            
+
             $table->timestamps();
         });
     }
