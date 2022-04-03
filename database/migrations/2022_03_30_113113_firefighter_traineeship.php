@@ -13,7 +13,15 @@ class FirefighterTraineeship extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('firefighter_traineeship', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('firefightr_id')->constrainer()->onDelete('restrict'); 
+            $table->foreignId('traineeship_id')->constrainer()->onDelete('restrict');
+            $table->string('placing');
+            $table->date('period');
+            $table->string('detail');
+            $table->timestamps();
+        });
     }
 
     /**

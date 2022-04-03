@@ -13,7 +13,14 @@ class CertificateFirefighter extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('certificate_firefighter', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('certificate_id')->constrainer()->onDelete('restrict'); 
+            $table->foreignId('firefighter_id')->constrainer()->onDelete('restrict');
+            $table->date('date_certif');
+            $table->string('place');
+            $table->timestamps();
+        });
     }
 
     /**

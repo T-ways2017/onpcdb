@@ -13,7 +13,15 @@ class FirefighterSpeciality extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('firefighter_speciality', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('firefightr_id')->constrainer()->onDelete('restrict'); 
+            $table->foreignId('speciality_id')->constrainer()->onDelete('restrict');
+            $table->string('place');
+            $table->date('date_spec');
+            $table->timestamps();
+        });
+        
     }
 
     /**
