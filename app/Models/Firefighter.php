@@ -32,4 +32,10 @@ class Firefighter extends Model
         return $this->belongsTo(Category::class);
 
     }
+    
+    public function Promotion(): BelongsTo
+    {
+        return $this->belongsTo(Promotion::class);
+
+    }
 }
