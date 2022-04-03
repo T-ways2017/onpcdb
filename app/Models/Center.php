@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\firefighter;
+use App\Models\Firefighter;
 
 
 class Center extends Model
@@ -15,9 +15,11 @@ class Center extends Model
 
     public function firefighters()
     {
-        return $this->hasMany('App\Models\Firefighter');
+        return $this->hasMany(Firefighter::class);
 
     }
+
+    
 }
 
 
