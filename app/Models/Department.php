@@ -10,11 +10,13 @@ class Department extends Model
 {
     use HasFactory;
 
-     //One Department has many Firegthters
-
-     public function firefighters()
-     {
-         return $this->hasMany(Firefighter::class);
- 
-     }
+    /**
+     * Get all of the Firefighter for the Department
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Firefighters(): HasMany
+    {
+        return $this->hasMany(Firefighter::class);
+    }
 }

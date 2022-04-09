@@ -10,12 +10,14 @@ class Category extends Model
 {
     use HasFactory;
     
-    //One Cartegory has many Firegthters
-
-     public function firefighters()
-     {
-         return $this->hasMany(Firefighter::class);
- 
-     }
+/**
+ * Get all of the firefighters for the Category
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasMany
+ */
+public function firefighters(): HasMany
+{
+    return $this->hasMany(Firefight::class);
+}
 
 }
